@@ -1,0 +1,29 @@
+[
+    {
+        "username": "bob",
+        "email": "bob12@gmail.com",
+        "password": "Bobby1234",
+        "address": "1235 Main street",
+        "city": "Alexandria",
+        "zip": "41001",
+        "created_at": "2025-10-10 15:04:05"
+    },
+    {
+        "username": "Braden",
+        "email": "bneiser34@gmail.com",
+        "password": "Password890",
+        "address": "1667 Upper Tug Fork road",
+        "city": "Alexandria",
+        "zip": "41001",
+        "created_at": "2025-10-10 07:25:02"
+    },
+    {
+        "username": "Ryan",
+        "email": "ryan36@gmail.com",
+        "password": "Password1",
+        "address": "1234 East street",
+        "city": "Highland Heights",
+        "zip": "41001",
+        "created_at": "2025-10-10 15:57:38"
+    }
+]

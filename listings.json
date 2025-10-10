@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Spirit Island",
+        "description": "A cooperative game where you defend your island from invaders. Fairly used.",
+        "price": 45,
+        "username": "Braden",
+        "image": "assests\/68e8999c6c095-20251010_012139.jpg",
+        "created_at": "2025-10-10 07:29:00"
+    },
+    {
+        "title": "Sea Dragons",
+        "description": "Competitive puzzle game. 2-5 players. Fairly used.",
+        "price": 27,
+        "username": "Braden",
+        "image": "assests\/68e89a0d33fec-20251010_012209.jpg",
+        "created_at": "2025-10-10 07:30:53"
+    },
+    {
+        "title": "Wingspan",
+        "description": "Competitive board building game. 1-5 Players. Never used.",
+        "price": 45,
+        "username": "Braden",
+        "image": "assests\/68e89b44136b9-20251010_012111.jpg",
+        "created_at": "2025-10-10 07:36:04"
+    },
+    {
+        "title": "Villianous",
+        "description": "Competitive strategy game where you play as classic villians. 2-6 players. Good condition.",
+        "price": 37,
+        "username": "bob",
+        "image": "assests\/68e902413ee5f-villianous.jpg",
+        "created_at": "2025-10-10 14:55:29"
+    },
+    {
+        "title": "Gloomhaven",
+        "description": "Cooperative tactical adventure game. Play as diffrent characters to tackle dungeons and beat monsters. 1-4 players. Well used.",
+        "price": 100,
+        "username": "bob",
+        "image": "assests\/68e90346daadf-gloomhaven.webp",
+        "created_at": "2025-10-10 14:59:50"
+    },
+    {
+        "title": "Wyrmspan",
+        "description": "Competitive board builder game. 2-4 players. New conditition.",
+        "price": 40,
+        "username": "Ryan",
+        "image": "assests\/68e911477ecef-wyrmspan.jpg",
+        "created_at": "2025-10-10 15:59:35"
+    }
+]
