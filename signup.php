@@ -3,7 +3,6 @@ session_start();
 
 $usersFile = 'users.json';
 
-// Ensure file exists
 if (!file_exists($usersFile)) {
     file_put_contents($usersFile, json_encode([]));
 }
@@ -12,7 +11,6 @@ $errors = [];
 $success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form data safely
     $username = trim($_POST['username'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = trim($_POST['password'] ?? '');
@@ -20,17 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $city = trim($_POST['city'] ?? '');
     $zip = trim($_POST['zip'] ?? '');
 
-    // Validation
     if ($username === '' || $email === '' || $password === '' || $address === '' || $city === '' || $zip === '') {
         $errors[] = "All fields are required.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Please enter a valid email address.";
     }
 
-    // Load existing users
     $users = json_decode(file_get_contents($usersFile), true) ?? [];
 
-    // Check for duplicates
     foreach ($users as $user) {
         if ($user['username'] === $username) {
             $errors[] = "Username already exists.";
@@ -40,12 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // If no errors, save new user
     if (empty($errors)) {
         $newUser = [
             'username' => $username,
             'email' => $email,
-            'password' => $password, // plain text (for learning only)
+            'password' => $password, 
             'address' => $address,
             'city' => $city,
             'zip' => $zip,
@@ -141,3 +135,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </body>
 </html>
+
