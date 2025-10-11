@@ -1,16 +1,13 @@
 <?php
 session_start();
 
-// Ensure listings.json exists
 $listingsFile = 'listings.json';
 if (!file_exists($listingsFile)) {
     file_put_contents($listingsFile, json_encode([]));
 }
 
-// Load all listings
 $listings = json_decode(file_get_contents($listingsFile), true) ?? [];
 
-// Handle search query
 $query = trim($_GET['query'] ?? '');
 if ($query !== '') {
     $listings = array_filter($listings, function($listing) use ($query) {
@@ -46,7 +43,6 @@ if ($query !== '') {
     </header>
 
     <main class="container my-5">
-        <!-- Search Form -->
         <form class="d-flex justify-content-center mb-4" method="get">
             <input class="form-control me-2" type="search" name="query" placeholder="Search for listings..." style="max-width: 400px;" value="<?= htmlspecialchars($query) ?>">
             <button class="btn btn-primary" type="submit">Search</button>
@@ -82,3 +78,4 @@ if ($query !== '') {
     </footer>
 </body>
 </html>
+
