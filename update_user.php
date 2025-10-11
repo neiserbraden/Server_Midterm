@@ -1,16 +1,14 @@
 <?php
 session_start();
 
-// Restrict access if not logged in
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-// Pre-fill user data from session
 $username = $_SESSION['username'];
 $email = $_SESSION['email'];
-$password = $_SESSION['password'] ?? ''; // only stored if you added it to the session
+$password = $_SESSION['password'] ?? ''; 
 $address = $_SESSION['address'];
 $city = $_SESSION['city'];
 $zip = $_SESSION['zip'];
@@ -23,7 +21,6 @@ $zip = $_SESSION['zip'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update User Information</title>
 
-    <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -118,3 +115,4 @@ $zip = $_SESSION['zip'];
     </footer>
 </body>
 </html>
+
