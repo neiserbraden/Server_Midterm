@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Restrict access if not logged in
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
@@ -10,20 +9,16 @@ if (!isset($_SESSION['username'])) {
 $listingsFile = 'listings.json';
 $uploadDir = 'assests/';
 
-// Ensure uploads directory exists
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0777, true);
 }
 
-// Ensure listings JSON file exists
 if (!file_exists($listingsFile)) {
     file_put_contents($listingsFile, json_encode([]));
 }
 
-// Load existing listings
 $listings = json_decode(file_get_contents($listingsFile), true) ?? [];
 
-// Handle uploaded image
 $imagePath = '';
 if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     $filename = uniqid() . '-' . basename($_FILES['image']['name']);
@@ -34,7 +29,6 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     }
 }
 
-// Create new listing
 $newListing = [
     'title' => trim($_POST['title']),
     'description' => trim($_POST['description']),
@@ -44,13 +38,11 @@ $newListing = [
     'created_at' => date('Y-m-d H:i:s')
 ];
 
-// Add to listings array
 $listings[] = $newListing;
 
-// Save to JSON
 file_put_contents($listingsFile, json_encode($listings, JSON_PRETTY_PRINT));
 
-// Redirect back with success
 header("Location: make_listing.php?success=1");
 exit();
 ?>
+
