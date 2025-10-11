@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// Check if admin is logged in
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
     header("Location: admin_login.php");
     exit();
 }
 
-// Load users and listings
 $usersFile = 'users.json';
 $listingsFile = 'listings.json';
 
@@ -95,3 +93,4 @@ $listings = file_exists($listingsFile) ? json_decode(file_get_contents($listings
 </div>
 </body>
 </html>
+
