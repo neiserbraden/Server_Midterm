@@ -3,13 +3,11 @@ session_start();
 
 $usersFile = 'users.json';
 
-// Redirect to home if already logged in
 if (isset($_SESSION['username'])) {
     header("Location: home.php");
     exit();
 }
 
-// Ensure users file exists
 if (!file_exists($usersFile)) {
     file_put_contents($usersFile, json_encode([]));
 }
@@ -99,3 +97,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 </body>
 </html>
+
