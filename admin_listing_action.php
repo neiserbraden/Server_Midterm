@@ -12,7 +12,7 @@ $index = $_POST['listing_index'];
 $action = $_POST['action'];
 
 if ($action === 'delete') {
-    // Delete listing image if exists
+    
     if (!empty($listings[$index]['image']) && file_exists($listings[$index]['image'])) {
         unlink($listings[$index]['image']);
     }
@@ -23,3 +23,4 @@ file_put_contents($listingsFile, json_encode($listings, JSON_PRETTY_PRINT));
 header("Location: admin_portal.php");
 exit();
 ?>
+
