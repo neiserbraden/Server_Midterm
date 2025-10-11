@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Restrict access if not logged in
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
@@ -55,28 +54,21 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
-    <!-- Header Section -->
     <header class="hero">
         <div class="container">
-            <!-- Logout Button -->
             <a href="logout.php" class="btn btn-outline-light position-absolute top-0 end-0 m-3">Log Out</a>
             <h1 class="display-5 fw-bold">Welcome to the BoardSell Website </h1>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container my-5">
-        <!-- Overview Section -->
         <section class="overview text-center mb-5">
             <h2 class="fw-bold mb-3">Our Mission</h2>
             <p class="text-muted"> We seek to cultivate a site where board game hobbyists can sell and buy board games. </p>
         </section>
 
-
-        <!-- Quick Links -->
         <section class="quick-links">
             <div class="row g-4 text-center">
-                <!-- Make a Listing -->
                 <div class="col-md-3 col-sm-6">
                     <a href="make_listing.php">
                         <div class="card h-100 border-0 shadow-sm">
@@ -88,7 +80,6 @@ if (!isset($_SESSION['username'])) {
                     </a>
                 </div>
 
-                <!-- Browse Listings -->
                 <div class="col-md-3 col-sm-6">
                     <a href="browse_listings.php">
                         <div class="card h-100 border-0 shadow-sm">
@@ -100,7 +91,6 @@ if (!isset($_SESSION['username'])) {
                     </a>
                 </div>
 
-                <!-- Update User Information -->
                 <div class="col-md-3 col-sm-6">
                     <a href="update_user.php">
                         <div class="card h-100 border-0 shadow-sm">
@@ -112,7 +102,6 @@ if (!isset($_SESSION['username'])) {
                     </a>
                 </div>
 
-                <!-- Questions -->
                 <div class="col-md-3 col-sm-6">
                     <a href="questions.php">
                         <div class="card h-100 border-0 shadow-sm">
@@ -128,16 +117,15 @@ if (!isset($_SESSION['username'])) {
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="text-center text-muted py-4 border-top">
         <small> <?php echo date('Y'); ?> My Project. </small>
     </footer>
 
-  <!-- Bootstrap JS (for validation styles & components) -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous">
   </script>
 </body>
+
 </html>
